@@ -41,5 +41,7 @@ ext {
             runner          : '1.0.2',
 
             espressoTest    : '3.0.2',
+
+            butterKnife     : '8.8.1'
     ]
 }
