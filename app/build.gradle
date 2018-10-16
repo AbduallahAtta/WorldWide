@@ -31,7 +31,10 @@ dependencies {
     implementation 'com.android.support:recyclerview-v7:' + rootProject.librariesVersions.supportLibrary
     implementation 'com.android.support:cardview-v7:' + rootProject.librariesVersions.supportLibrary
 
+    implementation 'com.google.firebase:firebase-core:' + rootProject.librariesVersions.firebaseSdk
+
     implementation 'com.jakewharton:butterknife:' + rootProject.librariesVersions.butterKnife
-    implementation 'com.jakewharton:butterknife-compiler:' + rootProject.librariesVersions.butterKnife
+    annotationProcessor 'com.jakewharton:butterknife-compiler:' + rootProject.librariesVersions.butterKnife
 
 }
+apply plugin: 'com.google.gms.google-services'
