@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">World Wide</string>
+    <string name="login_membership_registration_label_text">Register</string>
+    <string name="login_button_label">Login</string>
+    <string name="new_member_label">New Member?</string>
+    <string name="login_password_hint">Password</string>
+    <string name="login_email_hint">Email</string>
 </resources>

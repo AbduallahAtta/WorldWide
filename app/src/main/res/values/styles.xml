@@ -8,4 +8,59 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="LoginButtonStyle" parent="Base.Widget.AppCompat.Button.Colored">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:text">@string/login_button_label</item>
+    </style>
+
+    <style name="RegisterButtonStyle" parent="Base.Widget.AppCompat.Button.Colored">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/login_membership_registration_label_margin</item>
+        <item name="android:text">@string/login_membership_registration_label_text</item>
+    </style>
+
+    <style name="EmailLoginTextLayoutStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/login_email_text_input_margin</item>
+    </style>
+
+    <style name="EmailLoginEditTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:drawableLeft">@drawable/ic_email</item>
+        <item name="android:drawablePadding">@dimen/login_email_drawable_padding</item>
+        <item name="android:drawableStart">@drawable/ic_email</item>
+        <item name="android:inputType">textEmailAddress</item>
+    </style>
+
+    <style name="PasswordLoginTextLayoutStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/login_password_text_input_margin</item>
+    </style>
+
+    <style name="PasswordLoginEditTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:drawableLeft">@drawable/ic_lock</item>
+        <item name="android:drawablePadding">@dimen/login_password_drawable_padding</item>
+        <item name="android:drawableStart">@drawable/ic_lock</item>
+        <item name="android:inputType">textPassword</item>
+    </style>
+
+    <style name="LoginNewMemberRegisterLabelStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/login_membership_registration_label_margin</item>
+        <item name="android:fontFamily">@font/titillium_web</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Title</item>
+        <item name="android:textSize">@dimen/new_member_label_text_size</item>
+    </style>
+
 </resources>

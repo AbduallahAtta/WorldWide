@@ -6,4 +6,55 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/emailTextInputLayout"
+        style="@style/EmailLoginTextLayoutStyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/loginEmailEditText"
+            style="@style/EmailLoginEditTextStyle"
+            android:hint="@string/login_email_hint" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/loginPasswordTextInputLayout"
+        style="@style/PasswordLoginTextLayoutStyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailTextInputLayout"
+        app:passwordToggleEnabled="true">
+
+        <EditText
+            android:id="@+id/loginPasswordEditText"
+            style="@style/PasswordLoginEditTextStyle"
+            android:hint="@string/login_password_hint" />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/loginButton"
+        style="@style/LoginButtonStyle"
+        android:layout_marginTop="@dimen/login_button_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginPasswordTextInputLayout" />
+
+    <TextView
+        android:id="@+id/orNewMemberLabel"
+        style="@style/LoginNewMemberRegisterLabelStyle"
+        android:text="@string/new_member_label"
+        app:layout_constraintBottom_toTopOf="@+id/registerButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/registerButton"
+        style="@style/RegisterButtonStyle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </android.support.constraint.ConstraintLayout>

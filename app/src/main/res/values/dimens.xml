@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="login_email_text_input_margin">24dp</dimen>
+    <dimen name="login_password_text_input_margin">24dp</dimen>
+    <dimen name="login_membership_registration_label_margin">8dp</dimen>
+    <dimen name="new_member_label_text_size">16sp</dimen>
+    <dimen name="login_button_margin">18dp</dimen>
+    <dimen name="login_email_drawable_padding">4dp</dimen>
+    <dimen name="login_password_drawable_padding">4dp</dimen>
+</resources>
