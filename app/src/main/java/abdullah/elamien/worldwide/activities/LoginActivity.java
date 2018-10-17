@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
+import com.crashlytics.android.Crashlytics;
 import com.github.ybq.android.spinkit.SpinKitView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -26,6 +27,7 @@ import butterknife.BindString;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import io.fabric.sdk.android.Fabric;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -50,6 +52,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
         setFullScreen();
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
@@ -91,6 +94,7 @@ public class LoginActivity extends AppCompatActivity {
                             hideLoadingIndicator();
                             launchCountriesListActivity();
                         } else {
+                            Crashlytics.logException(task.getException());
                             hideLoadingIndicator();
                             showErrorOccurred();
                         }
