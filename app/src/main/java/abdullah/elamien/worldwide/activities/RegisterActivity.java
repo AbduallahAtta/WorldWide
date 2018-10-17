@@ -81,8 +81,6 @@ public class RegisterActivity extends AppCompatActivity {
     public void onRegisterButtonClick() {
         if (isValidEmailInput() && isPasswordMatched() && isPasswordEligible()) {
             registerNewUser();
-        } else {
-            showErrorOccurredMsg();
         }
     }
 
@@ -107,6 +105,7 @@ public class RegisterActivity extends AppCompatActivity {
     private void launchCountriesListActivity() {
         Intent intent = new Intent(this, CountriesListActivity.class);
         startActivity(intent);
+        finish();
     }
 
     private void hideLoadingIndicator() {
@@ -158,5 +157,6 @@ public class RegisterActivity extends AppCompatActivity {
     @OnClick(R.id.loginButton)
     public void onLoginButtonClick() {
         NavUtils.navigateUpFromSameTask(this);
+        finish();
     }
 }
