@@ -1,5 +1,6 @@
 package abdullah.elamien.worldwide.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.constraint.Group;
@@ -94,13 +95,18 @@ public class RegisterActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             hideLoadingIndicator();
-                            // TODO: 10/17/2018 show list activity
+                            launchCountriesListActivity();
                         } else {
                             hideLoadingIndicator();
                             showErrorOccurredMsg();
                         }
                     }
                 });
+    }
+
+    private void launchCountriesListActivity() {
+        Intent intent = new Intent(this, CountriesListActivity.class);
+        startActivity(intent);
     }
 
     private void hideLoadingIndicator() {

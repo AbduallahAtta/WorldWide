@@ -17,6 +17,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import abdullah.elamien.worldwide.GlideApp;
 import abdullah.elamien.worldwide.R;
@@ -88,13 +89,19 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             hideLoadingIndicator();
-                            // TODO: 10/17/2018 show the countries list
+                            launchCountriesListActivity();
                         } else {
                             hideLoadingIndicator();
                             showErrorOccurred();
                         }
                     }
                 });
+    }
+
+    private void launchCountriesListActivity() {
+        Intent intent = new Intent(this, CountriesListActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     private void showLoadingIndicator() {
@@ -141,5 +148,14 @@ public class LoginActivity extends AppCompatActivity {
     private void launchRegisterActivity() {
         Intent intent = new Intent(this, RegisterActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    protected void onStart() {
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user != null) {
+            launchCountriesListActivity();
+        }
+        super.onStart();
     }
 }
