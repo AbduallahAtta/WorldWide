@@ -16,4 +16,7 @@
     <string name="register_header_image_url">https://goo.gl/Qp1L5M</string>
     <string name="register_button_label">Register</string>
     <string name="register_login_button_label">Login</string>
+    <string name="invalid_email_input_msg">Invalid Email</string>
+    <string name="invalid_password_matching_msg">Passwords should matched</string>
+    <string name="invalid_password_signature_msg">Password should contains at least one symbol, and 6–20 numbers</string>
 </resources>
