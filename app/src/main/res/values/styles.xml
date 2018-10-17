@@ -1,24 +1,29 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+        <item name="colorAccent">@color/secondaryColor</item>
+        <item name="android:fontFamily">@font/ubuntu_medium</item>
     </style>
 
-    <style name="LoginButtonStyle" parent="Base.Widget.AppCompat.Button.Colored">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginTop">8dp</item>
+    <style name="LoginButtonStyle">
+        <item name="android:textColor">@color/primaryTextColor</item>
         <item name="android:textAllCaps">false</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:background">@drawable/button_background</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/login_button_margin</item>
         <item name="android:text">@string/login_button_label</item>
     </style>
 
-    <style name="RegisterButtonStyle" parent="Base.Widget.AppCompat.Button.Colored">
+    <style name="RegisterButtonStyle">
+        <item name="android:textColor">@color/primaryTextColor</item>
         <item name="android:textAllCaps">false</item>
-        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:background">@drawable/button_background</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_margin">@dimen/login_membership_registration_label_margin</item>
         <item name="android:text">@string/login_membership_registration_label_text</item>
@@ -61,6 +66,27 @@
         <item name="android:fontFamily">@font/titillium_web</item>
         <item name="android:textAppearance">@style/TextAppearance.AppCompat.Title</item>
         <item name="android:textSize">@dimen/new_member_label_text_size</item>
+    </style>
+
+    <style name="LoginAppNameStyle">
+        <item name="android:text">@string/app_name</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center|center_vertical</item>
+        <item name="android:fontFamily">@font/concert_one</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+        <item name="android:textSize">@dimen/login_app_name_text_size</item>
+    </style>
+
+    <style name="LoginLabelStyle">
+        <item name="android:text">@string/login_label_text</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/login_label_margin_top</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/login_label_margin</item>
+        <item name="android:fontFamily">@font/titillium_web</item>
+        <item name="android:textColor">@color/secondaryTextColor</item>
+        <item name="android:textSize">@dimen/login_label_text_size</item>
     </style>
 
 </resources>

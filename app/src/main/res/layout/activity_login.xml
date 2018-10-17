@@ -1,60 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    android:fillViewport="true">
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/emailTextInputLayout"
-        style="@style/EmailLoginTextLayoutStyle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/loginLayoutParent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.LoginActivity">
 
-        <EditText
-            android:id="@+id/loginEmailEditText"
-            style="@style/EmailLoginEditTextStyle"
-            android:hint="@string/login_email_hint" />
+        <com.github.florent37.shapeofview.shapes.ArcView
+            android:id="@+id/loginHeader"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/login_header_height"
+            app:shape_arc_cropDirection="outside"
+            app:shape_arc_height="@dimen/login_header_arc_height"
+            app:shape_arc_position="bottom">
 
-    </android.support.design.widget.TextInputLayout>
+            <ImageView
+                android:id="@+id/headerImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/primaryDarkColor"
+                android:contentDescription="@string/header_image_content_description"
+                android:scaleType="centerCrop" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/loginPasswordTextInputLayout"
-        style="@style/PasswordLoginTextLayoutStyle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailTextInputLayout"
-        app:passwordToggleEnabled="true">
+            <TextView style="@style/LoginAppNameStyle" />
 
-        <EditText
-            android:id="@+id/loginPasswordEditText"
-            style="@style/PasswordLoginEditTextStyle"
-            android:hint="@string/login_password_hint" />
-    </android.support.design.widget.TextInputLayout>
+        </com.github.florent37.shapeofview.shapes.ArcView>
 
-    <Button
-        android:id="@+id/loginButton"
-        style="@style/LoginButtonStyle"
-        android:layout_marginTop="@dimen/login_button_margin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginPasswordTextInputLayout" />
+        <TextView
+            android:id="@+id/loginLabel"
+            style="@style/LoginLabelStyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/loginHeader" />
 
-    <TextView
-        android:id="@+id/orNewMemberLabel"
-        style="@style/LoginNewMemberRegisterLabelStyle"
-        android:text="@string/new_member_label"
-        app:layout_constraintBottom_toTopOf="@+id/registerButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/emailTextInputLayout"
+            style="@style/EmailLoginTextLayoutStyle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/loginLabel">
 
-    <Button
-        android:id="@+id/registerButton"
-        style="@style/RegisterButtonStyle"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+            <EditText
+                android:id="@+id/loginEmailEditText"
+                style="@style/EmailLoginEditTextStyle"
+                android:hint="@string/login_email_hint" />
 
-</android.support.constraint.ConstraintLayout>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/loginPasswordTextInputLayout"
+            style="@style/PasswordLoginTextLayoutStyle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/emailTextInputLayout"
+            app:passwordToggleEnabled="true">
+
+            <EditText
+                android:id="@+id/loginPasswordEditText"
+                style="@style/PasswordLoginEditTextStyle"
+                android:hint="@string/login_password_hint" />
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/loginButton"
+            style="@style/LoginButtonStyle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/loginPasswordTextInputLayout" />
+
+        <TextView
+            android:id="@+id/orNewMemberLabel"
+            style="@style/LoginNewMemberRegisterLabelStyle"
+            android:text="@string/new_member_label"
+            app:layout_constraintBottom_toTopOf="@+id/registerButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/loginButton"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <Button
+            android:id="@+id/registerButton"
+            style="@style/RegisterButtonStyle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.v4.widget.NestedScrollView>

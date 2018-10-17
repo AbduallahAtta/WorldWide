@@ -37,5 +37,10 @@ dependencies {
     implementation 'com.jakewharton:butterknife:' + rootProject.librariesVersions.butterKnife
     annotationProcessor 'com.jakewharton:butterknife-compiler:' + rootProject.librariesVersions.butterKnife
 
+    implementation 'com.github.bumptech.glide:glide:' + rootProject.librariesVersions.glide
+    annotationProcessor 'com.github.bumptech.glide:compiler:' + rootProject.librariesVersions.glide
+
+    implementation 'com.github.florent37:shapeofview:' + rootProject.librariesVersions.shapeOfView
+
 }
 apply plugin: 'com.google.gms.google-services'
