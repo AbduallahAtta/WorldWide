@@ -53,6 +53,8 @@ ext {
 
             shapeOfView     : '1.3.2',
 
-            spinKit         : '1.1.0'
+            spinKit         : '1.1.0',
+
+            retrofit        : '2.4.0'
     ]
 }

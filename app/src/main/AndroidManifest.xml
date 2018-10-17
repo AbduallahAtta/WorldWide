@@ -26,7 +26,10 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".activities.CountriesListActivity"></activity>
+        <activity
+            android:name=".activities.CountriesListActivity"
+            android:theme="@style/CountriesListActivityStyle" />
+
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="CRASHLYTICS_KEY_BELONGS_HERE" />

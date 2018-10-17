@@ -23,4 +23,9 @@
     <dimen name="register_text_input_password_confirm_margin">16dp</dimen>
     <dimen name="register_button_margin">16dp</dimen>
     <dimen name="register_login_button_margin">16dp</dimen>
+    <dimen name="list_item_countries_name_margin">16dp</dimen>
+    <dimen name="list_item_countries_name_text_size">18sp</dimen>
+    <dimen name="list_item_view_margin">8dp</dimen>
+    <dimen name="list_item_view_cornder_radius">2dp</dimen>
+    <dimen name="list_item_view_default_elevation">1dp</dimen>
 </resources>

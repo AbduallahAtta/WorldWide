@@ -20,4 +20,5 @@
     <string name="invalid_password_matching_msg">Passwords should matched</string>
     <string name="invalid_password_signature_msg">Password should contains at least one symbol, and 6–20 numbers</string>
     <string name="registration_error_msg">an error occurred, Try again later.</string>
+    <string name="list_item_countries_name_label">Egypt</string>
 </resources>
