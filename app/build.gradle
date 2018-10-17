@@ -43,5 +43,6 @@ dependencies {
 
     implementation 'com.github.florent37:shapeofview:' + rootProject.librariesVersions.shapeOfView
 
+    implementation 'com.github.ybq:Android-SpinKit:' + rootProject.librariesVersions.spinKit
 }
 apply plugin: 'com.google.gms.google-services'

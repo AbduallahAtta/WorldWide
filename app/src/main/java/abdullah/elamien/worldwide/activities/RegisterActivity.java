@@ -1,13 +1,22 @@
 package abdullah.elamien.worldwide.activities;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.constraint.Group;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
+import com.github.ybq.android.spinkit.SpinKitView;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 import abdullah.elamien.worldwide.GlideApp;
 import abdullah.elamien.worldwide.R;
@@ -27,6 +36,10 @@ public class RegisterActivity extends AppCompatActivity {
     EditText mRegisterPasswordEditText;
     @BindView(R.id.passwordConfirmEditText)
     EditText mPasswordConfirmEditText;
+    @BindView(R.id.registerLayoutGroup)
+    Group mInputFieldsLayoutGroup;
+    @BindView(R.id.loadingIndicator)
+    SpinKitView mLoadingIndicator;
 
     @BindString(R.string.invalid_email_input_msg)
     String mEmailErrorMsg;
@@ -35,6 +48,8 @@ public class RegisterActivity extends AppCompatActivity {
     @BindString(R.string.invalid_password_signature_msg)
     String mInvalidPasswordErrorMsg;
 
+    private FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +57,7 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
         ButterKnife.bind(this);
         loadHeaderImage();
+        initFirebaseAuth();
     }
 
     private void setFullScreen() {
@@ -56,11 +72,48 @@ public class RegisterActivity extends AppCompatActivity {
                 .into(mHeaderImage);
     }
 
+    private void initFirebaseAuth() {
+        mAuth = FirebaseAuth.getInstance();
+    }
+
     @OnClick(R.id.registerUserButton)
     public void onRegisterButtonClick() {
         if (isValidEmailInput() && isPasswordMatched() && isPasswordEligible()) {
-            // TODO: 10/17/2018 register user
+            registerNewUser();
+        } else {
+            showErrorOccurredMsg();
         }
+    }
+
+    private void registerNewUser() {
+        showLoadingIndicator();
+        mAuth.createUserWithEmailAndPassword(mRegisterEmailEditText.getText().toString().trim(),
+                mRegisterPasswordEditText.getText().toString())
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            hideLoadingIndicator();
+                            // TODO: 10/17/2018 show list activity
+                        } else {
+                            showErrorOccurredMsg();
+                        }
+                    }
+                });
+    }
+
+    private void hideLoadingIndicator() {
+        mLoadingIndicator.setVisibility(View.GONE);
+        mInputFieldsLayoutGroup.setVisibility(View.VISIBLE);
+    }
+
+    private void showLoadingIndicator() {
+        mInputFieldsLayoutGroup.setVisibility(View.GONE);
+        mLoadingIndicator.setVisibility(View.VISIBLE);
+    }
+
+    private void showErrorOccurredMsg() {
+        Toast.makeText(this, R.string.registration_error_msg, Toast.LENGTH_LONG).show();
     }
 
     private boolean isValidEmailInput() {
