@@ -66,5 +66,7 @@ dependencies {
 
     implementation 'com.squareup.retrofit2:retrofit:' + rootProject.librariesVersions.retrofit
     implementation 'com.squareup.retrofit2:converter-gson:' + rootProject.librariesVersions.retrofit
+
+    implementation 'android.arch.lifecycle:extensions:' + rootProject.librariesVersions.viewModel
 }
 apply plugin: 'com.google.gms.google-services'

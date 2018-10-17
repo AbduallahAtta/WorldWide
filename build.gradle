@@ -55,6 +55,8 @@ ext {
 
             spinKit         : '1.1.0',
 
-            retrofit        : '2.4.0'
+            retrofit        : '2.4.0',
+
+            viewModel       : '1.1.1'
     ]
 }
