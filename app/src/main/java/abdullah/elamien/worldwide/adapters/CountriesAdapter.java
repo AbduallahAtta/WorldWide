@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -14,6 +15,7 @@ import abdullah.elamien.worldwide.R;
 import abdullah.elamien.worldwide.models.Result;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by AbdullahAtta on 10/17/2018.
@@ -53,6 +55,11 @@ public class CountriesAdapter extends RecyclerView.Adapter<CountriesAdapter.Coun
         public CountriesViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
+        }
+
+        @OnClick(R.id.listItemCountryView)
+        public void onCountryClick() {
+            Toast.makeText(mContext, mCountryList.get(getAdapterPosition()).getName() + " Clicked!", Toast.LENGTH_SHORT).show();
         }
     }
 }

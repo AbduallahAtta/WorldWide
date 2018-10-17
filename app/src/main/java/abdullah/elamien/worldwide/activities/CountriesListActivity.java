@@ -9,7 +9,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
+import com.github.ybq.android.spinkit.SpinKitView;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.List;
@@ -25,6 +27,8 @@ import butterknife.ButterKnife;
 public class CountriesListActivity extends AppCompatActivity {
     @BindView(R.id.countriesRecyclerView)
     RecyclerView mCountriesRecyclerView;
+    @BindView(R.id.loadingIndicator)
+    SpinKitView mLoadingIndicator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +39,7 @@ public class CountriesListActivity extends AppCompatActivity {
     }
 
     private void loadCountries() {
+        showLoadingIndicator();
         CountriesViewModel model = ViewModelProviders.of(this).get(CountriesViewModel.class);
         model.getmCountriesData().observe(this, new Observer<Countries>() {
             @Override
@@ -44,9 +49,18 @@ public class CountriesListActivity extends AppCompatActivity {
         });
     }
 
+    private void showLoadingIndicator() {
+        mLoadingIndicator.setVisibility(View.VISIBLE);
+    }
+
     private void setCountries(List<Result> result) {
+        hideLoadingIndicator();
         CountriesAdapter adapter = new CountriesAdapter(result, this);
         mCountriesRecyclerView.setAdapter(adapter);
+    }
+
+    private void hideLoadingIndicator() {
+        mLoadingIndicator.setVisibility(View.GONE);
     }
 
     @Override
