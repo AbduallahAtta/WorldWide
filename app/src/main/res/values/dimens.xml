@@ -13,4 +13,14 @@
     <dimen name="login_header_height">150dp</dimen>
     <dimen name="login_header_arc_height">20dp</dimen>
     <dimen name="login_label_margin_top">14dp</dimen>
+    <dimen name="register_label_margin">8dp</dimen>
+    <dimen name="register_label_text_size">28sp</dimen>
+    <dimen name="register_image_height">200dp</dimen>
+    <dimen name="register_text_input_email_margin">16dp</dimen>
+    <dimen name="register_drawable_email_padding">4dp</dimen>
+    <dimen name="register_text_input_password_margin">16dp</dimen>
+    <dimen name="register_drawable_password_padding">4dp</dimen>
+    <dimen name="register_text_input_password_confirm_margin">16dp</dimen>
+    <dimen name="register_button_margin">16dp</dimen>
+    <dimen name="register_login_button_margin">16dp</dimen>
 </resources>

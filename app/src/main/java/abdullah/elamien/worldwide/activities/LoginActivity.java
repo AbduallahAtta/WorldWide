@@ -1,5 +1,6 @@
 package abdullah.elamien.worldwide.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.WindowManager;
@@ -46,6 +47,11 @@ public class LoginActivity extends AppCompatActivity {
 
     @OnClick(R.id.registerButton)
     public void onRegisterButtonClick() {
-        // TODO: 10/17/2018 perform register action
+        launchRegisterActivity();
+    }
+
+    private void launchRegisterActivity() {
+        Intent intent = new Intent(this, RegisterActivity.class);
+        startActivity(intent);
     }
 }

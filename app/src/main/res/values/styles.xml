@@ -89,4 +89,90 @@
         <item name="android:textSize">@dimen/login_label_text_size</item>
     </style>
 
+    <style name="RegisterLabelStyle">
+        <item name="android:text">@string/register_label</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/register_label_margin</item>
+        <item name="android:fontFamily">@font/titillium_web</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+        <item name="android:textSize">@dimen/register_label_text_size</item>
+    </style>
+
+    <style name="RegisterHeaderStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/register_image_height</item>
+        <item name="android:background">@color/primaryColor</item>
+        <item name="android:contentDescription">@string/register_header_image_content_description
+        </item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="RegisterEmailTextLayoutStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/register_text_input_email_margin</item>
+    </style>
+
+    <style name="RegisterEmailEditTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:drawableLeft">@drawable/ic_email</item>
+        <item name="android:drawablePadding">@dimen/register_drawable_email_padding</item>
+        <item name="android:drawableStart">@drawable/ic_email</item>
+        <item name="android:inputType">textEmailAddress</item>
+    </style>
+
+    <style name="RegisterPasswordTextLayoutStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/register_text_input_password_margin</item>
+    </style>
+
+    <style name="RegisterPasswordEditTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:drawableLeft">@drawable/ic_key</item>
+        <item name="android:drawablePadding">@dimen/register_drawable_password_padding</item>
+        <item name="android:drawableStart">@drawable/ic_key</item>
+        <item name="android:inputType">textPassword</item>
+    </style>
+
+    <style name="RegisterPasswordConfirmTextLayoutStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/register_text_input_password_confirm_margin</item>
+    </style>
+
+    <style name="RegisterPasswordConfirmEditTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:drawableLeft">@drawable/ic_key</item>
+        <item name="android:drawablePadding">@dimen/register_drawable_password_padding</item>
+        <item name="android:drawableStart">@drawable/ic_key</item>
+        <item name="android:inputType">textPassword</item>
+    </style>
+
+    <style name="RegisterActivityButtonStyle">
+        <item name="android:text">@string/register_button_label</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/register_button_margin</item>
+        <item name="android:background">@drawable/button_background</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+    </style>
+
+    <style name="RegisterActivityLoginButtonStyle">
+        <item name="android:text">@string/register_login_button_label</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/register_login_button_margin</item>
+        <item name="android:background">@drawable/button_background</item>
+        <item name="android:drawableEnd">@drawable/ic_arrow_forward</item>
+        <item name="android:drawableRight">@drawable/ic_arrow_forward</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+    </style>
+
 </resources>
