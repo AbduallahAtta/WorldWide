@@ -29,10 +29,6 @@
         <activity
             android:name=".activities.CountriesListActivity"
             android:theme="@style/CountriesListActivityStyle" />
-
-        <meta-data
-            android:name="io.fabric.ApiKey"
-            android:value="CRASHLYTICS_KEY_BELONGS_HERE" />
     </application>
 
 </manifest>

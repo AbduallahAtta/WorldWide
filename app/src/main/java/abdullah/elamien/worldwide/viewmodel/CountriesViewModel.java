@@ -4,8 +4,6 @@ import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 import android.util.Log;
 
-import com.crashlytics.android.Crashlytics;
-
 import abdullah.elamien.worldwide.models.Countries;
 import abdullah.elamien.worldwide.rest.ApiUtils;
 import retrofit2.Call;
@@ -40,7 +38,7 @@ public class CountriesViewModel extends ViewModel {
 
             @Override
             public void onFailure(Call<Countries> call, Throwable t) {
-                Crashlytics.logException(t);
+                Log.d(TAG, t.getMessage());
             }
         });
     }

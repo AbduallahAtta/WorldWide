@@ -10,7 +10,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.crashlytics.android.Crashlytics;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.List;
@@ -22,7 +21,6 @@ import abdullah.elamien.worldwide.models.Result;
 import abdullah.elamien.worldwide.viewmodel.CountriesViewModel;
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import io.fabric.sdk.android.Fabric;
 
 public class CountriesListActivity extends AppCompatActivity {
     @BindView(R.id.countriesRecyclerView)
@@ -31,7 +29,6 @@ public class CountriesListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_countries_list);
         ButterKnife.bind(this);
         loadCountries();
