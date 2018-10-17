@@ -21,4 +21,5 @@
     <string name="invalid_password_signature_msg">Password should contains at least one symbol, and 6–20 numbers</string>
     <string name="registration_error_msg">an error occurred, Try again later.</string>
     <string name="list_item_countries_name_label">Egypt</string>
+    <string name="sign_out_menu_title">Sign out</string>
 </resources>
