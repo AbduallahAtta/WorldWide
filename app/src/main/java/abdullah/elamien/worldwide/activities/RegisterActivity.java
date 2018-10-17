@@ -96,6 +96,7 @@ public class RegisterActivity extends AppCompatActivity {
                             hideLoadingIndicator();
                             // TODO: 10/17/2018 show list activity
                         } else {
+                            hideLoadingIndicator();
                             showErrorOccurredMsg();
                         }
                     }
