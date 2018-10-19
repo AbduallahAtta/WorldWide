@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.constraint.Group;
-import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.WindowManager;
@@ -156,7 +155,12 @@ public class RegisterActivity extends AppCompatActivity {
 
     @OnClick(R.id.loginButton)
     public void onLoginButtonClick() {
-        NavUtils.navigateUpFromSameTask(this);
+        LaunchLoginActivity();
+    }
+
+    private void LaunchLoginActivity() {
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
         finish();
     }
 }
